@@ -1,0 +1,106 @@
+body {
+    font-family: 'Crimson Pro', serif;
+    font-size: 16px;
+    background-color: #f7f7e5;
+  }
+.u-contianer {
+	/* border: 1px solid #ccc; */
+	padding: 10px;
+	margin: 10px auto;
+	display: grid;
+	grid-gap: 16px;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr) ) ;
+	width: 80%;
+}
+
+.u-cards {
+	border: 1px;
+    /* background: rgb(); */
+    border: 1px solid #ccc;
+    height: fit-content;
+    min-height: 150px;
+	border-radius: 5px;
+	transition: transform .2s;
+}
+
+.u-cards-header {
+    height: 25px;
+    border-bottom: 1px solid #ccc;  
+    margin: auto;
+    display:flex;
+    justify-content: space-between;
+}
+
+
+
+.u-cards:hover {
+	border-color: rgb(158, 19, 19);
+	transform: scale(1.035);
+	background: rgb(252, 234, 234);
+}
+
+.order-number{
+    font-weight: bold;
+    vertical-align: middle;
+    text-align: left;
+    font-size: 20px;
+}
+
+.order-detail{
+    font-size: 11px;
+}
+
+.u-card-body, .u-cards-header{
+    padding: 10px 16px;
+}
+
+.item-body{
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 2px;
+    line-height: 24px;
+    display:flex;
+    justify-content: space-between;
+}
+
+
+.u-card-action {
+    /* height: 35px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+}
+
+.u-card-action button{
+    margin-right: 2px;
+    margin-left: 2px;
+    border-radius: 4px;
+    border : solid 1px;
+    cursor: pointer;
+    padding: 6px 10px;
+
+}
+
+
+.hide {
+    display: none;
+}
+
+button.confirm {
+    border-color: #007bff;
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+button.decline {
+    border-color: #dc3545;
+    background-color: #dc3545;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
