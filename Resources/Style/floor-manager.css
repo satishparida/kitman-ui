@@ -4,70 +4,6 @@ body {
     background-color: #f7f7e5;
   }
 
-.u-navigation {
-	/* border: 1px solid #ccc; */
-	padding: 10px;
-	margin: 10px auto;
-	width: 80%;
-    display:flex;
-    justify-content: space-between;
-}
-img{
-    border-radius: 15%;
-}
-.u-navigation-logo{
-    display:flex;
-    justify-content: space-between;
-}
-
-.u-navigation-logo-text{
-    padding: 8px 30px;
-    font-size: 40px;
-    font-weight: bold;
-}
-
-.dropbtn {
-    color: white;
-    padding: 10px;
-    font-size: 10px;
-    border: none;
-    cursor: pointer;
-}
-
-.menu-line{
-    width: 20px;
-    height: 5px;
-    background-color: black;
-    margin: 3px 0;
-}
-  
-.dropdown {
-    padding: 10px;
-    position: relative;
-    display: inline-block;
-}
-  
-.dropdown-content {
-    border: 1px solid rgb(137, 192, 10);
-    display: none;
-    position: absolute;
-    background-color: #f7f7de;
-    min-width: 100px;
-}
-  
-.dropdown-content a {
-    color: black;
-    padding: 10px 12px;
-    text-decoration: none;
-    display: block;
-}
-  
-.dropdown-content a:hover {background-color: #b3b383;}
-  
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
 .u-contianer {
 	/* border: 1px solid #ccc; */
 	padding: 10px;
@@ -88,18 +24,18 @@ img{
 	transition: transform .2s;
 }
 
+.u-cards:hover {
+	border-color: rgb(137, 192, 10);
+	transform: scale(1.035);
+	background: rgb(235, 238, 229);
+}
+
 .u-cards-header {
     height: 25px;
     border-bottom: 1px solid #ccc;  
     margin: auto;
     display:flex;
     justify-content: space-between;
-}
-
-.u-cards:hover {
-	border-color: rgb(137, 192, 10);
-	transform: scale(1.035);
-	background: rgb(235, 238, 229);
 }
 
 .order-number{
