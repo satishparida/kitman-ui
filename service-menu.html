@@ -4,23 +4,23 @@
 		<title>Service Manu</title>
 		<link rel="stylesheet" href=".\Resources\Style\service-menu.css">
         <link rel="stylesheet" href=".\Resources\Style\loggedin-navigation.css">
-		<link rel="stylesheet"
-          	href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<script src=".\Resources\Scripts\service-menu.js"></script>
 		
     </head>
 
     <body>
         <div class="u-navigation">
 			<div class="u-navigation-logo">
-				<div><img src="Resources\Images\Logo.png"/></div>
+				<div class="u-navigation-image"><img src="Resources/Images/Logo.jpg"/></div>
 				<div class="u-navigation-logo-text">Kit Man</div>
 			</div>
 
 			<div class="header-action-bar">
 				<div class="shopping-cart">
 					<i class="fa">&#xf07a;</i>
-					<span class='badge badge-warning' id='lblCartCount'> 10 </span>
+					<span class="badge badge-warning hide" id='lblCartCount'>0</span>
 				</div>
 				
 				<div class="dropdown ">
@@ -40,41 +40,41 @@
 
 
 		<div class="u-contianer" >
-			<div>
-				<div class="menu">
-					<div class="item">
-						<div class="item-image">
+			<div class="menu-items-div">
+				<div class="menu" id="menu_id_101">
+					<div class="item" id="item_id_101">
+						<div class="item-image" id="item_img_id_101">
 							<img src="Resources/Images/menu-place-holder.png"/>
 						</div>
 						<div class="item-detail">
-							<h4 class="item-name">
+							<h4 class="item-name" id="item_name_101">
 								Dosa
 							</h4>
 							<div class="item-catagory">
-								<div class="item-catagory-veg">Veg</div>
+								<div class="item-catagory-veg" id="item_cat_101">Veg</div>
 								<div class="item-catagory-generic">Breakfast</div>
 							</div>
 	
 							<div class="item-price">
-								<span>₹105</span>
+								<span id="item_cost_101">₹105</span>
 							</div>
 						</div>
 						<div class="item-action">
-							<div class="item-add-button hide">
+							<div class="item-add-button " id="item_add_button_101" onclick="addItem(101)">
 								<div class="item-add-button-text-div">
 									Add
 								</div>
 							</div>
 
-							<div class="item-add-button-mixed">
+							<div class="item-add-button-mixed hide" id="item_add_button_mixed_101">
 								<div class="item-add-button-mixed-inner">
-									<div class="item-button-symbol">
+									<div class="item-button-symbol" onclick="removeItemMinus(101)">
 										<i class="fa fa-minus"></i>
 									</div>
 									<div class="item-label-item-count">
-										<span>100</span>
+										<span id="item_count_101"></span>
 									</div>
-									<div class="item-button-symbol">
+									<div class="item-button-symbol" onclick="addItemPlus(101)">
 										<i class="fa fa-plus"></i>
 									</div>
 								</div>
@@ -105,9 +105,23 @@
 							</div>
 						</div>
 						<div class="item-action">
-							<div class="item-add-button">
+							<div class="item-add-button ">
 								<div class="item-add-button-text-div">
 									Add
+								</div>
+							</div>
+
+							<div class="item-add-button-mixed hide">
+								<div class="item-add-button-mixed-inner">
+									<div class="item-button-symbol">
+										<i class="fa fa-minus"></i>
+									</div>
+									<div class="item-label-item-count">
+										<span></span>
+									</div>
+									<div class="item-button-symbol">
+										<i class="fa fa-plus"></i>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -116,145 +130,12 @@
 					</div>	
 				</div>
 
-				<div class="menu">
-					<div class="item">
-						<div class="item-image">
-							<img src="Resources/Images/menu-place-holder.png"/>
-						</div>
-						<div class="item-detail">
-							<h4 class="item-name">
-								Dosa
-							</h4>
-							<div class="item-catagory">
-								<div class="item-catagory-veg">Veg</div>
-								<div class="item-catagory-generic">Breakfast</div>
-							</div>
-	
-							<div class="item-price">
-								<span>₹105</span>
-							</div>
-						</div>
-						<div class="item-action">
-							<div class="item-add-button hide">
-								<div class="item-add-button-text-div">
-									Add
-								</div>
-							</div>
-
-							<div class="item-add-button-mixed">
-								<div class="item-add-button-mixed-inner">
-									<div class="item-button-symbol">
-										<i class="fa fa-minus"></i>
-									</div>
-									<div class="item-label-item-count">
-										<span>100</span>
-									</div>
-									<div class="item-button-symbol">
-										<i class="fa fa-plus"></i>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="menu-paragraph">Dosa Serveed with south indian coconut Chutny and freshly served Garlic Paste. Dosa Serveed with south indian coconut Chutny and freshly served Garlic Paste
-						Dosa Serveed with south indian coconut Chutny and freshly served Garlic Paste. Dosa Serveed with south indian coconut Chutny and freshly served Garlic Paste.
-					</div>	
-				</div>
-
-				<div class="menu">
-					<div class="item">
-						<div class="item-image">
-							<img src="Resources/Images/menu-place-holder.png"/>
-						</div>
-						<div class="item-detail">
-							<h4 class="item-name">
-								Dosa
-							</h4>
-							<div class="item-catagory">
-								<div class="item-catagory-veg">Veg</div>
-								<div class="item-catagory-generic">Breakfast</div>
-							</div>
-	
-							<div class="item-price">
-								<span>₹105</span>
-							</div>
-						</div>
-						<div class="item-action">
-							<div class="item-add-button hide">
-								<div class="item-add-button-text-div">
-									Add
-								</div>
-							</div>
-
-							<div class="item-add-button-mixed">
-								<div class="item-add-button-mixed-inner">
-									<div class="item-button-symbol">
-										<i class="fa fa-minus"></i>
-									</div>
-									<div class="item-label-item-count">
-										<span>100</span>
-									</div>
-									<div class="item-button-symbol">
-										<i class="fa fa-plus"></i>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="menu-paragraph">Dosa Serveed with south indian coconut Chutny and freshly served Garlic Paste. Dosa Serveed with south indian coconut Chutny and freshly served Garlic Paste
-						Dosa Serveed with south indian coconut Chutny and freshly served Garlic Paste. Dosa Serveed with south indian coconut Chutny and freshly served Garlic Paste.
-					</div>	
-				</div>
-
-				<div class="menu">
-					<div class="item">
-						<div class="item-image">
-							<img src="Resources/Images/menu-place-holder.png"/>
-						</div>
-						<div class="item-detail">
-							<h4 class="item-name">
-								Dosa
-							</h4>
-							<div class="item-catagory">
-								<div class="item-catagory-veg">Veg</div>
-								<div class="item-catagory-generic">Breakfast</div>
-							</div>
-	
-							<div class="item-price">
-								<span>₹105</span>
-							</div>
-						</div>
-						<div class="item-action">
-							<div class="item-add-button hide">
-								<div class="item-add-button-text-div">
-									Add
-								</div>
-							</div>
-
-							<div class="item-add-button-mixed">
-								<div class="item-add-button-mixed-inner">
-									<div class="item-button-symbol">
-										<i class="fa fa-minus"></i>
-									</div>
-									<div class="item-label-item-count">
-										<span>100</span>
-									</div>
-									<div class="item-button-symbol">
-										<i class="fa fa-plus"></i>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="menu-paragraph">Dosa Serveed with south indian coconut Chutny and freshly served Garlic Paste. Dosa Serveed with south indian coconut Chutny and freshly served Garlic Paste
-						Dosa Serveed with south indian coconut Chutny and freshly served Garlic Paste. Dosa Serveed with south indian coconut Chutny and freshly served Garlic Paste.
-					</div>	
-				</div>
+				
 			</div>
 			
 
-			<div class="cart">
-				<div class="empty-cart hide">
+			<div class="cart" id="cart">
+				<div class="empty-cart">
 					<div class="empty-cart-header">Cart Empty</div>
 					<img src="Resources/Images/Cart_empty.png" class="empty-cart-image"/>
 					<div class="empty-cart-desciption">
@@ -262,7 +143,7 @@
 					</div>
 				</div>
 
-				<div class="non-empty-cart">
+				<div class="non-empty-cart hide">
 					<div>
 						Cart
 						<div class="cart-item-count">
@@ -270,7 +151,7 @@
 						</div>
 					</div>
 
-					<div class="cart-items">
+					<div class="cart-items ">
 						<div class="cart-item">
 							<div class="cart-item-detail">
 								<div class="cart-item-isveg"></div>
@@ -301,20 +182,7 @@
 							</div>
 						</div>
 
-						<div class="cart-item">
-							<div class="cart-item-detail">
-								<div class="cart-item-isnonveg"></div>
-								<div class="cart-item-name">Chicken Tikka Masala</div>
-							</div>
-							<div class="cart-item-quantity">
-								<i class="fa fa-times"></i>
-								<span>5</span>
-							</div>
-							<div class="cart-item-price">
-								<span>₹</span>
-								<span>15000</span>
-							</div>
-						</div>
+						
 
 
 					</div>
@@ -337,6 +205,21 @@
 			
 			
 		</div>
+
+		<script>
+			window.onscroll = function() {myFunction()};
+			
+			var header = document.getElementById("cart");
+			var sticky = header.offsetTop;
+			
+			function myFunction() {
+			  if (window.pageYOffset > sticky) {
+				header.classList.add("sticky");
+			  } else {
+				header.classList.remove("sticky");
+			  }
+			}
+		</script>
 
     </body>
 </html>

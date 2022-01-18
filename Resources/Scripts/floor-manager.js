@@ -8,7 +8,6 @@ function confirmOrder(orderid){
     declineButton.classList.add("hide"); 
     confirmButton.classList.add("hide");
     preparedButton.classList.remove("hide");
-
 }
 
 function preparedOrder(orderid){

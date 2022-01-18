@@ -1,12 +1,25 @@
 .u-navigation {
 	padding: 10px;
 	margin: 10px auto;
-	width: 80%;
+	width: 70%;
     display:flex;
     justify-content: space-between;
 }
-.u-navigation img{
+.u-navigation-image{
     border-radius: 15%;
+    max-height: 80px;
+    max-width: 100px;
+}
+
+.u-navigation-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: none;
+  opacity: 1;
+  will-change: transform, opacity;
+  border-radius: 5%;
+  filter: unset;
 }
 .u-navigation-logo{
     display:flex;
@@ -45,20 +58,20 @@
     border: 1px solid rgb(137, 192, 10);
     display: none;
     position: absolute;
-    background-color: #f7f7de;
+    background-color: #ffffff;
     min-width: 100px;
-    border-radius: 5px;
+    border-radius: 2px;
 }
   
 .dropdown-content a {
     color: black;
-    padding: 10px 12px;
+    padding: 6px 6px;
     text-decoration: none;
     display: block;
 }
   
-.dropdown-content a:hover {background-color: #b3b383;}
+.dropdown-content a:hover {background-color: #eeeeee;}
   
 .dropdown:hover .dropdown-content {
-    display: block;
+    display: flex;
 }
