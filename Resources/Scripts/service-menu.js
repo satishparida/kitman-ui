@@ -37,12 +37,19 @@ function removeItemMinus(itemId) {
 
 function controlHeaderCartCount(methode){
     var headerCartCountSpan = document.getElementById('lblCartCount');
-    var headerCartCount = parseInt(headerCartCountSpan.innerHTML)
+    var headerCartCount = parseInt(headerCartCountSpan.innerHTML);
+    var centralCartCountSpan = document.getElementById('cart-item-count');
+
+    var emptyCart = document.getElementById('empty-cart');
+    var nonEmptyCart = document.getElementById('non-empty-cart');   
+    
 
     if (methode == 'add') {
         if (headerCartCount == 0){
             headerCartCountSpan.innerHTML = 1;
             headerCartCountSpan.classList.remove("hide");
+            emptyCart.classList.add("hide");
+            nonEmptyCart.classList.remove("hide");
         }
         else {
             headerCartCount = headerCartCount+1;
@@ -54,10 +61,47 @@ function controlHeaderCartCount(methode){
         if (headerCartCount == 1){
             headerCartCountSpan.innerHTML = 0;
             headerCartCountSpan.classList.add("hide");
+            emptyCart.classList.remove("hide");
+            nonEmptyCart.classList.add("hide");
         }
         else {
             headerCartCount = headerCartCount-1;
             headerCartCountSpan.innerHTML = headerCartCount;
+        }
+    }
+
+    centralCartCountSpan.innerHTML = headerCartCountSpan.innerHTML
+}
+
+function centralCartController(methode, itemId){
+    
+    if (methode == 'add') {
+        if (headerCartCount == 0){
+            emptyCart.classList.add("hide");
+            centralCartCountSpan.innerHTML = headerCartCountSpan.innerHTML;
+            if (document.getElementById('item_cat_'+itemId).innerHTML == 'Veg' ) {
+                div_cat =  '<div class="cart-item-isveg"></div>';
+            }
+            else {
+                div_cat =  '<div class="cart-item-isnonveg"></div>';
+            }
+            cartItems.innerHTML =+ '<div class="cart-item" id="cartItem_' + itemId + '">' +
+                                        '<div class="cart-item-detail" id="cartItemDetail_' + itemId + '">' +
+                                        div_cat +
+                                            '<div class="cart-item-name">French Fries</div>' +
+                                        '</div>' +
+                                        '<div class="cart-item-quantity">'+
+                                            '<i class="fa fa-times"></i>' +
+                                            '<span>1</span>' +
+                                        '</div>' +
+                                        '<div class="cart-item-price">' +
+                                            '<span>₹</span>' +
+                                            '<span>100</span>' +
+                                        '</div>'+
+                                    '</div>';
+
+
+            nonEmptyCart.classList.remove("hide");
         }
     }
 }

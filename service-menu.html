@@ -56,7 +56,8 @@
 							</div>
 	
 							<div class="item-price">
-								<span id="item_cost_101">₹105</span>
+								<span>₹</span>
+								<span id="item_cost_101">105</span>
 							</div>
 						</div>
 						<div class="item-action">
@@ -85,57 +86,57 @@
 						Dosa Serveed with south indian coconut Chutny and freshly served Garlic Paste. Dosa Serveed with south indian coconut Chutny and freshly served Garlic Paste.
 					</div>	
 				</div>
-	
-				<div class="menu">
-					<div class="item">
-						<div class="item-image">
+
+				<div class="menu" id="menu_id_102">
+					<div class="item" id="item_id_102">
+						<div class="item-image" id="item_img_id_102">
 							<img src="Resources/Images/menu-place-holder.png"/>
 						</div>
 						<div class="item-detail">
-							<h4 class="item-name">
-								Chicken Tikka Masala
+							<h4 class="item-name" id="item_name_102">
+								Chicken Kolhapuri
 							</h4>
 							<div class="item-catagory">
-								<div class="item-catagory-nonveg">Non-Veg</div>
+								<div class="item-catagory-nonveg" id="item_cat_102">Non-Veg</div>
 								<div class="item-catagory-generic">Main Course</div>
 							</div>
-							
+	
 							<div class="item-price">
-								<span>₹105</span>
+								<span>₹</span>
+								<span id="item_cost_102">205</span>
 							</div>
 						</div>
 						<div class="item-action">
-							<div class="item-add-button ">
+							<div class="item-add-button " id="item_add_button_102" onclick="addItem(102)">
 								<div class="item-add-button-text-div">
 									Add
 								</div>
 							</div>
 
-							<div class="item-add-button-mixed hide">
+							<div class="item-add-button-mixed hide" id="item_add_button_mixed_102">
 								<div class="item-add-button-mixed-inner">
-									<div class="item-button-symbol">
+									<div class="item-button-symbol" onclick="removeItemMinus(102)">
 										<i class="fa fa-minus"></i>
 									</div>
 									<div class="item-label-item-count">
-										<span></span>
+										<span id="item_count_102"></span>
 									</div>
-									<div class="item-button-symbol">
+									<div class="item-button-symbol" onclick="addItemPlus(102)">
 										<i class="fa fa-plus"></i>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="menu-paragraph">Dosa Serveed with south indian coconut Chutny and freshly served Garlic Paste.
+					<div class="menu-paragraph">Chicken kolhapuri is a dish from the city of Kolhapur in Maharashtra, India consisting of mixed vegetables and Chicken in a thick, spiced gravy. It is served as a main course accompanied by breads such as chapatis.
 					</div>	
 				</div>
-
 				
 			</div>
 			
 
 			<div class="cart" id="cart">
-				<div class="empty-cart">
+				<div class="empty-cart" id="empty-cart">
 					<div class="empty-cart-header">Cart Empty</div>
 					<img src="Resources/Images/Cart_empty.png" class="empty-cart-image"/>
 					<div class="empty-cart-desciption">
@@ -143,11 +144,11 @@
 					</div>
 				</div>
 
-				<div class="non-empty-cart hide">
+				<div class="non-empty-cart hide" id="non-empty-cart">
 					<div>
 						Cart
 						<div class="cart-item-count">
-							<span>1</span> Item
+							<span id="cart-item-count">0</span> Item
 						</div>
 					</div>
 
@@ -182,9 +183,6 @@
 							</div>
 						</div>
 
-						
-
-
 					</div>
 
 					<div class="cart-checkout">
@@ -195,15 +193,8 @@
 						</div>
 						<button class="cart-checkout-button">Checkout →</button>
 					</div>
-
-
-					
 				</div>
 			</div>
-
-			
-			
-			
 		</div>
 
 		<script>
