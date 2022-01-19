@@ -146,10 +146,11 @@ function centralCartController(methode, itemId){
 
 function cartCheckout() {
     var allCartItems = document.getElementsByClassName('cart-item');
-    payload =[]
+
+    items =[]
     var totalQuantity = 0;
 
-    payload.push( {"noofrows": allCartItems.length});
+    // payload.push( {"noofrows": allCartItems.length});
     
     for (i=0; i<allCartItems.length; i++) {
         var item = allCartItems[i];
@@ -164,11 +165,25 @@ function cartCheckout() {
                 "vegiterian": vegiterian, 
                 "quantity": quantity}
 
-        payload.push(item);
+        items.push(item);
     }
-    payload.push( {"totalQuantity": totalQuantity});
     var totalCost = parseFloat(document.getElementById('cartSubtotal').innerText.split(' ')[1]);
-    payload.push( {"totalCost": totalCost});
+
+    payload = { "noofrows": allCartItems.length,
+                items,
+                "totalQuantity": totalQuantity,
+                "totalCost": totalCost,
+                "orderPlacedAt": toISOStringLocal(new Date())
+            }
+
     payloadJSON = JSON.stringify(payload)
     console.log(payloadJSON);
 }
+
+function toISOStringLocal(d) {
+    function z(n){return (n<10?'0':'') + n}
+    return d.getFullYear() + '-' + z(d.getMonth()+1) + '-' +
+           z(d.getDate()) + 'T' + z(d.getHours()) + ':' +
+           z(d.getMinutes()) + ':' + z(d.getSeconds())
+            
+  }
