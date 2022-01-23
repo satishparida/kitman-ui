@@ -1,3 +1,80 @@
+function loadManu(){
+    let request = new XMLHttpRequest();
+    request.open("GET", "https://c03892e5-e747-4d76-b694-eb77a9dfeb2c.mock.pstmn.io/v1/menu");
+    request.send();
+    request.onload = () => {
+        if(request.status == 200){
+            menuJSON = JSON.parse(request.responseText);
+
+            for (i=0; i< menuJSON.length; i++) {
+                // console.log(menuJSON[i]);
+
+                id = menuJSON[i].itemId;
+
+                if (menuJSON[i].veg) {
+                    veg_item_div = '<div class="item-catagory-veg" id="item_cat_' + id + '">Veg</div>';
+                }
+                else {
+                    veg_item_div = '<div class="item-catagory-nonveg" id="item_cat_' + id + '">Non-Veg</div>';
+                }
+
+                item_generic_cat_div = '<div class="item-catagory-generic">' + menuJSON[i].type + '</div>';
+
+                description = 'Food can be very transformational, and it can be more than just about a dish.'+ 
+                                'Thats what happened to me when I first went to France.'+ 
+                                'I fell in love. And if you fall in love, well, then everything is easy.';
+
+                item_div = '<div class="menu" id="menu_id_' + id + '">' +
+                                '<div class="item" id="item_id_' + id + '">' +
+                                    '<div class="item-image" id="item_img_id_' + id + '">' +
+                                        '<img src="Resources/Images/menu-place-holder.png"/>' +
+                                    '</div>' +
+                                    '<div class="item-detail">' +
+                                        '<h4 class="item-name" id="item_name_' + id + '">' + menuJSON[i].itemName + '</h4>' +
+                                        '<div class="item-catagory">' + 
+                                            veg_item_div +
+                                            item_generic_cat_div +
+                                        '</div>' +
+
+                                        '<div class="item-price">' +
+                                            '<span>₹</span>' +
+                                            '<span id="item_cost_' + id + '">' + menuJSON[i].price + '</span>' +
+                                        '</div>' +
+                                    '</div>' +
+                                    '<div class="item-action">' +
+                                        '<div class="item-add-button " id="item_add_button_' + id + '" onclick="addItem(' + id + ')">' +
+                                            '<div class="item-add-button-text-div">' +
+                                                'Add' +
+                                            '</div>' +
+                                        '</div>' +
+
+                                        '<div class="item-add-button-mixed hide" id="item_add_button_mixed_' + id + '">' +
+                                            '<div class="item-add-button-mixed-inner">' +
+                                                '<div class="item-button-symbol" onclick="removeItemMinus(' + id + ')">' +
+                                                    '<i class="fa fa-minus"></i>' +
+                                                '</div>' +
+                                                '<div class="item-label-item-count">' +
+                                                    '<span id="item_count_' + id + '"></span>' +
+                                                '</div>' +
+                                                '<div class="item-button-symbol" onclick="addItemPlus(' + id + ')">' +
+                                                    '<i class="fa fa-plus"></i>' +
+                                                '</div>' +
+                                            '</div>' +
+                                        '</div>' +
+                                    '</div>' +
+                                '</div>' +
+                                '<div class="menu-paragraph">' + description +  '</div>	' +
+                            '</div>';
+                var menuItems = document.getElementById("menu-items-div");
+                menuItems.insertAdjacentHTML('beforeend', item_div);
+            }
+        }
+        else {
+            console.log(request.statusText)
+        }
+    }
+}
+
 function addItem(itemId) {
     var mixedButton = document.getElementById('item_add_button_mixed_'+itemId);
     var addButton = document.getElementById('item_add_button_'+itemId);
@@ -91,7 +168,7 @@ function centralCartController(methode, itemId){
             var div_name = document.getElementById('item_name_'+itemId).innerHTML;
             var div_cost = document.getElementById('item_cost_'+itemId).innerHTML;
 
-            var cartItems = document.getElementById("cart-items")
+            var cartItems = document.getElementById("cart-items");
 
             item_div =  '<div class="cart-item" id="cartItem_' + itemId + '">' +
                             '<div class="cart-item-detail" id="cartItemDetail_' + itemId + '">' +

@@ -10,7 +10,7 @@
 		
     </head>
 
-    <body>
+    <body onload="loadManu()">
         <div class="u-navigation">
 			<div class="u-navigation-logo">
 				<div class="u-navigation-image"><img src="Resources/Images/Logo.jpg"/></div>
@@ -40,99 +40,8 @@
 
 
 		<div class="u-contianer" >
-			<div class="menu-items-div">
-				<div class="menu" id="menu_id_101">
-					<div class="item" id="item_id_101">
-						<div class="item-image" id="item_img_id_101">
-							<img src="Resources/Images/menu-place-holder.png"/>
-						</div>
-						<div class="item-detail">
-							<h4 class="item-name" id="item_name_101">
-								Dosa
-							</h4>
-							<div class="item-catagory">
-								<div class="item-catagory-veg" id="item_cat_101">Veg</div>
-								<div class="item-catagory-generic">Breakfast</div>
-							</div>
-	
-							<div class="item-price">
-								<span>₹</span>
-								<span id="item_cost_101">105.90</span>
-							</div>
-						</div>
-						<div class="item-action">
-							<div class="item-add-button " id="item_add_button_101" onclick="addItem(101)">
-								<div class="item-add-button-text-div">
-									Add
-								</div>
-							</div>
-
-							<div class="item-add-button-mixed hide" id="item_add_button_mixed_101">
-								<div class="item-add-button-mixed-inner">
-									<div class="item-button-symbol" onclick="removeItemMinus(101)">
-										<i class="fa fa-minus"></i>
-									</div>
-									<div class="item-label-item-count">
-										<span id="item_count_101"></span>
-									</div>
-									<div class="item-button-symbol" onclick="addItemPlus(101)">
-										<i class="fa fa-plus"></i>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="menu-paragraph">
-						Dosa Serveed with south indian coconut Chutny and freshly served Garlic Paste. Dosa Serveed with south indian coconut Chutny and freshly served Garlic Paste.
-					</div>	
-				</div>
-
-				<div class="menu" id="menu_id_102">
-					<div class="item" id="item_id_102">
-						<div class="item-image" id="item_img_id_102">
-							<img src="Resources/Images/menu-place-holder.png"/>
-						</div>
-						<div class="item-detail">
-							<h4 class="item-name" id="item_name_102">
-								Chicken Kolhapuri
-							</h4>
-							<div class="item-catagory">
-								<div class="item-catagory-nonveg" id="item_cat_102">Non-Veg</div>
-								<div class="item-catagory-generic">Main Course</div>
-							</div>
-	
-							<div class="item-price">
-								<span>₹</span>
-								<span id="item_cost_102">205</span>
-							</div>
-						</div>
-						<div class="item-action">
-							<div class="item-add-button " id="item_add_button_102" onclick="addItem(102)">
-								<div class="item-add-button-text-div">
-									Add
-								</div>
-							</div>
-
-							<div class="item-add-button-mixed hide" id="item_add_button_mixed_102">
-								<div class="item-add-button-mixed-inner">
-									<div class="item-button-symbol" onclick="removeItemMinus(102)">
-										<i class="fa fa-minus"></i>
-									</div>
-									<div class="item-label-item-count">
-										<span id="item_count_102"></span>
-									</div>
-									<div class="item-button-symbol" onclick="addItemPlus(102)">
-										<i class="fa fa-plus"></i>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="menu-paragraph">
-						Chicken kolhapuri is a dish from the city of Kolhapur in Maharashtra, India consisting of mixed vegetables and Chicken in a thick, spiced gravy. It is served as a main course accompanied by breads such as chapatis.
-					</div>	
-				</div>
-				
+			<div class="menu-items-div" id="menu-items-div">
+								
 			</div>
 			
 
@@ -163,6 +72,7 @@
 					</div>
 				</div>
 			</div>
+			
 		</div>
 
 		<script>
