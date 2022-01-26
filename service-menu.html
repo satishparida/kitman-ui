@@ -40,11 +40,8 @@
 
 
 		<div class="u-contianer" >
-			<div class="menu-items-div" id="menu-items-div">
-								
-			</div>
+			<div class="menu-items-div" id="menu-items-div"></div>
 			
-
 			<div class="cart" id="cart">
 				<div class="empty-cart" id="empty-cart">
 					<div class="empty-cart-header">Cart Empty</div>
@@ -75,20 +72,17 @@
 			
 		</div>
 
-		<script>
-			window.onscroll = function() {myFunction()};
-			
-			var header = document.getElementById("cart");
-			var sticky = header.offsetTop;
-			
-			function myFunction() {
-			  if (window.pageYOffset > sticky) {
-				header.classList.add("sticky");
-			  } else {
-				header.classList.remove("sticky");
-			  }
-			}
-		</script>
+		<div id="successOrder" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+			  <span class="close successfullyClosed" onclick="hideModal()">&times;</span>
+			  <h2>Order Placed Successfully</h2>
+			  <p>Your Order is placed successfully with us with Order ID: <B><span id="orderid"> 101 </span></B></p>
+			  <p>Kindly display your Order ID in the receipt to get your food.</p>
+			  <p>Order Placed at: <span id="orderTime"></span></p>
+			  <div class="modal-button successfullyClosed" onclick="hideModal()">Okey</div>
+			</div>
+		</div>
 
     </body>
 </html>

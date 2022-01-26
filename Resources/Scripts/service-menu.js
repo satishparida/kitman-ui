@@ -7,7 +7,6 @@ function loadManu(){
             menuJSON = JSON.parse(request.responseText);
 
             for (i=0; i< menuJSON.length; i++) {
-                // console.log(menuJSON[i]);
 
                 id = menuJSON[i].itemId;
 
@@ -24,7 +23,7 @@ function loadManu(){
                                 'Thats what happened to me when I first went to France.'+ 
                                 'I fell in love. And if you fall in love, well, then everything is easy.';
 
-                item_div = '<div class="menu" id="menu_id_' + id + '">' +
+                item_div =  '<div class="menu" id="menu_id_' + id + '">' +
                                 '<div class="item" id="item_id_' + id + '">' +
                                     '<div class="item-image" id="item_img_id_' + id + '">' +
                                         '<img src="Resources/Images/menu-place-holder.png"/>' +
@@ -226,8 +225,6 @@ function cartCheckout() {
 
     items =[]
     var totalQuantity = 0;
-
-    // payload.push( {"noofrows": allCartItems.length});
     
     for (i=0; i<allCartItems.length; i++) {
         var item = allCartItems[i];
@@ -255,6 +252,17 @@ function cartCheckout() {
 
     payloadJSON = JSON.stringify(payload)
     console.log(payloadJSON);
+
+    
+    document.getElementById('orderTime').innerHTML = toISOStringLocal(new Date());
+    var successOrder = document.getElementById("successOrder");
+    successOrder.style.display = "block";
+
+}
+
+function hideModal() {
+    successOrder.style.display = "none";
+    window.location.reload();
 }
 
 function toISOStringLocal(d) {
@@ -263,4 +271,24 @@ function toISOStringLocal(d) {
            z(d.getDate()) + 'T' + z(d.getHours()) + ':' +
            z(d.getMinutes()) + ':' + z(d.getSeconds())
             
-  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    var cart = document.getElementById("cart");
+    var cartOffSet = cart.offsetTop;
+    window.onscroll = function() {
+        if (window.pageYOffset > cartOffSet) {
+            cart.classList.add("sticky");
+        } 
+        else {
+            cart.classList.remove("sticky");
+        }
+    };
+
+    var successOrder = document.getElementById("successOrder");
+    window.onclick = function(event) {
+        if (event.target == successOrder) {
+            hideModal();
+        }
+    }
+})
