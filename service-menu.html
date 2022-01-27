@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Service Manu</title>
+		<link rel="stylesheet" href=".\Resources\Style\service-menu.css">
+        <link rel="stylesheet" href=".\Resources\Style\loggedin-navigation.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<script src=".\Resources\Scripts\service-menu.js"></script>
+		
+    </head>
+
+    <body onload="loadManu()">
+        <div class="u-navigation">
+			<div class="u-navigation-logo">
+				<div class="u-navigation-image"><img src="Resources/Images/Logo.jpg"/></div>
+				<div class="u-navigation-logo-text">Kit Man</div>
+			</div>
+
+			<div class="header-action-bar">
+				<div class="shopping-cart">
+					<i class="fa">&#xf07a;</i>
+					<span class="badge badge-warning hide" id='lblCartCount'>0</span>
+				</div>
+				
+				<div class="dropdown ">
+					<div class="dropbtn">
+						<div class="menu-line"></div>
+							<div class="menu-line"></div>
+							<div class="menu-line"></div>
+					</div>
+					<div class="dropdown-content">
+						<a href="#">Home</a>
+						<a href="#">About</a>
+						<a href="#">Logout</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="u-contianer" >
+			<div class="menu-items-div" id="menu-items-div"></div>
+			
+			<div class="cart" id="cart">
+				<div class="empty-cart" id="empty-cart">
+					<div class="empty-cart-header">Cart Empty</div>
+					<img src="Resources/Images/Cart_empty.png" class="empty-cart-image"/>
+					<div class="empty-cart-desciption">
+						Good food is always cooking! Go ahead, order some yummy items from the menu.
+					</div>
+				</div>
+
+				<div class="non-empty-cart hide" id="non-empty-cart">
+					<div>
+						Cart
+						<div class="cart-item-count">
+							<span id="cart-item-count">0</span> Item
+						</div>
+					</div>
+					<div class="cart-items " id ="cart-items"></div>
+
+					<div class="cart-checkout">
+						<div class="cart-checkout-subtotal">
+							<span>Subtotal</span>
+							<span id="cartSubtotal"></span>
+						</div>
+						<button class="cart-checkout-button" onclick="cartCheckout()">Checkout →</button>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+
+		<div id="successOrder" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+			  <span class="close successfullyClosed" onclick="hideModal()">&times;</span>
+			  <h2>Order Placed Successfully</h2>
+			  <p>Your Order is placed successfully with us with Order ID: <B><span id="orderid"> 101 </span></B></p>
+			  <p>Kindly display your Order ID in the receipt to get your food.</p>
+			  <p>Order Placed at: <span id="orderTime"></span></p>
+			  <div class="modal-button successfullyClosed" onclick="hideModal()">Okey</div>
+			</div>
+		</div>
+
+    </body>
+</html>
