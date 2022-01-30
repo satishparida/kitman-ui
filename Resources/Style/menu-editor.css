@@ -119,8 +119,6 @@
     justify-content: space-between;
 }
 
-
-
 .search-container {
     width: 60%;
     display: inline;
@@ -177,6 +175,8 @@
     /* border: 1px solid black; */
     margin: auto;
     padding: 20px;
+    font-size: 14px;
+    letter-spacing: 1px;
 }
 
 .container-headers {
@@ -188,7 +188,7 @@
 .container-header {
     padding: 10px 0px;
     border-bottom: 1px solid #ccc;
-    border-top: 1px solid #ccc;
+    /* border-top: 1px solid #ccc; */
 }
 
 .container-header i {
@@ -211,9 +211,6 @@
     width: 5%;
     text-align: center;
 }
-
-
-
 
 .container-header-text{
     font-size: 16px;
@@ -290,11 +287,11 @@
     text-align:left;
 }
 
-.tooltip h3 {margin:12px 0;}
+.tooltip h3 {margin:5px 0;}
 
 .tooltip .right {
     min-width:600px;
-    max-width:200px;
+    max-width:150px;
     top:50%;
     left:100%;
     margin-left:20px;
@@ -313,14 +310,11 @@
 }
 
 .tooltip:hover .right {
-    visibility:visible; 
+    visibility: visible; 
     opacity:1;
+    /* cursor: pointer; */
 }
 
-.tooltip .right img {
-    width:400px;
-    border-radius:8px 8px 0 0;
-}
 .tooltip .text-content {
     padding:10px 15px;
 }
@@ -334,6 +328,7 @@
     height:24px;
     overflow:hidden;
 }
+
 .tooltip .right i::after {
     content:'';
     position:absolute;
@@ -348,3 +343,83 @@
 
 
 
+.modal {
+    display: none; 
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 15px;
+    /* border: 2px solid rgb(0, 175, 146); */
+    width: 40%;
+    height:fit-content;
+    border-radius: 5px;
+  }
+  
+  .closeModal {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .closeModal:hover,
+  .closeModal:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-button{
+    border: none;
+    background-color: rgb(239, 79, 95);
+    color: #fff;
+    border-radius: 3px;
+    max-width: fit-content;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  .f-product-name, .f-product-type, .f-product-isVeg, .f-product-price, .f-product-image {
+      width: 100%;
+      text-align: left;
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+
+  .f-product-name input[type=text], .f-product-type select, .f-product-price input[type=number]  {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .f-product-type select {
+    padding: 10px 12px;
+  }
+
+  .f-product-image input[type=file] {
+    display: none;
+  }
+
+  .custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+  }

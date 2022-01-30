@@ -4,6 +4,7 @@
         <title></title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href=".\Resources\Style\menu-editor.css">
+        <script src=".\Resources\Scripts\menu-editor.js"></script>
     </head>
     <body>
         <div class="navigator">
@@ -38,7 +39,7 @@
                     <button class="search-button" type="submit"><i class="fa fa-search"></i></button>
                 </div>
 
-                <div class="add-item-button">
+                <div class="add-item-button" onclick="generateForm()">
                     <i class="fa fa-plus"></i>
                     <span class="add-item-button-text"> Add New Product</span>
                 </div>
@@ -68,7 +69,7 @@
                         <i class="fa fa-info-circle tooltip" style="color:rgb(19, 150, 226)">
                             <div class="right">
                                 <div class="text-content">
-                                    <h3>Dosa</h3>
+                                    <h4>Dosa</h4>
                                     <p>A dosa is a thin pancake or crepe originating from South India, made from a fermented batter predominantly consisting of lentils and rice. 
                                         It is somewhat similar to a crepe in appearance, although savoury flavours are generally emphasized.
                                     </p>
@@ -89,13 +90,76 @@
                     <div class="product-name">Chicken Dosa</div>
                     <div class="product-type">Launch</div>
                     <div class="product-isVeg"> <div class="product-type-nonveg"></div></div>
-                    <div class="product-info"><i class="fa fa-info-circle" style="color:rgb(19, 150, 226)"></i></div>
+                    <div class="product-info">
+                        <i class="fa fa-info-circle tooltip" style="color:rgb(19, 150, 226)">
+                            <div class="right">
+                                <div class="text-content">
+                                    <h3>Dosa</h3>
+                                    <p>A dosa is a thin pancake or crepe originating from South India, made from a fermented batter predominantly consisting of lentils and rice. 
+                                        It is somewhat similar to a crepe in appearance, although savoury flavours are generally emphasized.
+                                    </p>
+                                </div>
+                                <i></i>
+                            </div>
+                        </i>
+                    </div>
                     <div class="product-price">87</div>
                     <div class="product-status">Active</div>
                     <div class="product-quantity"><span>2349</span> <i class="fa fa-edit"></i> </div>
                     <div class="product-lmd"><span>2017Oct12T10:10:10</span></div>
                     <div class="product-actions"><i class="fa fa-edit"></i> <i class="fa fa-trash-o"></i> </div>
                     
+                </div>
+            </div>
+
+
+            <div class="modal" id="newItemForm">
+                <!-- Modal content -->
+                <div class="modal-content" >
+                  <span class="closeModal" onclick="hideModal()">&times;</span>
+                  <form>
+                        <div class="f-product-name">
+                            <label for="fproductName">Product Name</label> 
+                            <input type="text" name="fproductName" placeholder="Product Name.."/>
+                        </div>
+                        <div class="f-product-type">
+                            <label for="fproductType">Product Type</label> 
+                            <select name="fproductType">
+                                <option value="0">Select Product Type: </option>
+                                <option value="Breakfast">Breakfast</option>
+                                <option value="Launch">Launch</option>
+                                <option value="Main-Course">Main-Course</option>
+                                <option value="Bread">Bread</option>
+                            </select>
+                        </div>
+                        <div class="f-product-isVeg">
+                            <label class="container">
+                                <label for="container">Veg</label>
+                                <input type="radio" name="radio" value="Veg">
+                            </label>
+                            <label class="container">
+                                <label for="container">Non-Veg</label>
+                                <input type="radio" name="radio" value="Non-Veg">
+                            </label>
+                        </div>
+                        <div class="f-product-price">
+                            <label for="fproductPrice">Product Price</label> 
+                            <input type="number" name="fproductPrice" placeholder="Product Price.."/>
+                        </div>
+
+                        <div class="f-product-image">
+                            <label for="fproductImage" class="custom-file-upload"> 
+                                <i class="fa fa-cloud-upload"></i> Choose Product Image
+                            </label> 
+                            <input type="file" name="fproductImage" id="fproductImage">
+                        </div>
+
+                        
+
+
+                      
+                  </form>
+                  <div class="modal-button" onclick="hideModal()">Okey</div>
                 </div>
             </div>
 
